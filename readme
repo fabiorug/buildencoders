@@ -1,0 +1,19 @@
+IMPROVING A RAW WITHOUT MUCH LOSS IN FIDELITY OR REDUCING TOO MUCH NOISE AND SHARPNESS:
+
+FIRST STEP: SHOOT A RAW DNG.
+SECOND STEP: CONVERTING TO PNG (SELECT PNG) WITH http://www.dngconverter.com/
+THIRD STEP: DOWNLOAD THIS REPO AND COPY cjxlimproveall in C:\PATH_Programs
+EXECUTE AND CONVERT:
+for %i in (C:\Users\Utente\Documents\paint2\*.png) do cjxlimproveall -s 9 -d 0.787 -p --epf=2 --dots=0 -I 0.828 --faster_decoding=4 --photon_noise=ISO4780 --intensity_target=281 --override_bitdepth 12 %i %i.jxl
+
+
+AUTO BITRATE VIDEO WITHOUT ANY LOSS;
+
+for resolution higher than 360p even 720x720 it get slower like on full hd it reached 0.88 fps on i3 330m and it's slow. speed 10 is the one i recommend, at constant quality 100, 
+with notenoughav1encodes https://github.com/Alkl58/NotEnoughAV1Encodes , use 2 workers (at least)
+and COPY this build INCLUDED IN THIS REPO: https://github.com/xiph/rav1e/releases/tag/p20210831
+rav1e new build at speed 10 is good for near lossless
+and select rav1e and not librav1e.
+like for mts videos because it tends to overshoot
+at slower speeds, actually is not efficient and jpeg xl has same problems because actually they are nightly builds so you should wait for rav1e the 0.5.0 release and find out if is any good and test on a better possibly AVX2 processor
+quality is bad.
